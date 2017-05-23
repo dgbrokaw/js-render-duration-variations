@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<script src="main.js"></script>
+<link href="box.css" rel="stylesheet" type="text/css"></link>
+</head>
+
+<body>
+<div class="container">
+	<div class="box" id="box1"></div>
+	<div class="box" id="box2"></div>
+<!-- 	<div class="box" id="box3"></div>
+	<div class="box" id="box4"></div> -->
+</div>
+</body>
+
+<script>
+
+getAverageFrameDuration(100, function(avg) {
+	runTrials([ { use_timeout: true }
+	          , { show_outside: true }
+	          , { show_outside: true, use_timestamp_parameter: true }
+	          , { show_outside: true, dt: avg }
+	          , { show_outside: true, use_timestamp_parameter: true, dt: avg }
+	          , { show_outside: false }
+	          , { show_outside: false, use_timestamp_parameter: true }
+	          , { show_outside: false, dt: avg }
+	          , { show_outside: false, use_timestamp_parameter: true, dt: avg } ]);
+});
+
+</script>
+</html>
